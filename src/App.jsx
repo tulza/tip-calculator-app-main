@@ -5,13 +5,13 @@ function App() {
         <div id="tip-sel-box">
           <InputBox label={"Bill"} />
           <p>Select Tip %</p>
-          <div id="tip-sel-grid">
+          <form id="tip-sel-grid">
             <TipButton tipAmount={5} />
             <TipButton tipAmount={10} />
             <TipButton tipAmount={15} />
             <TipButton tipAmount={25} />
             <TipButton tipAmount={50} />
-          </div>
+          </form>
           <InputBox label={"Number of people"} />
         </div>
         <div id="summary">
@@ -35,21 +35,24 @@ function App() {
 const TipButton = ({ tipAmount }) => {
   return (
     <>
-      <div className="tip-button">{tipAmount}%</div>
+      <input type="button" className="tip-button" value={`${tipAmount}%`} />
     </>
   );
 };
 
-const InputBox = ({ label }, { id }) => {
+const InputBox = ({ label }) => {
   return (
     <>
-      <p>{label}</p>
-      <div className="input-box">
-        <span>$</span>
-        <span>142.5</span>
+      <div className="input-box-wrapper">
+        <img src="logo" />
+        <input type="Input" className="tip-button" />
       </div>
     </>
   );
+};
+
+const Test = () => {
+  return <div className="bg-black" />;
 };
 
 export default App;

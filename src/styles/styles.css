@@ -34,6 +34,8 @@
   row-gap: 16px;
   column-gap: 16px;
   grid-template-columns: auto auto auto;
+  grid-auto-flow: column;
+  direction: ltr;
 }
 
 #tip-sel-box p {
@@ -47,6 +49,7 @@
   padding: 50px;
 }
 .tip-button {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
