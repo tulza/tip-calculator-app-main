@@ -11,6 +11,9 @@ module.exports = {
     extend: {
       colors: {
         white: "#ffffff",
+        "summary-label": "hsl(189, 41%, 97%)",
+        "summary-perLabel": "hsl(186, 14%, 43%)",
+        "summary-total": "hsl(172, 67%, 50%)",
       },
     },
   },
