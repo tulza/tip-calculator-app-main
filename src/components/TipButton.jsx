@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
-const TipButton = ({ tipAmount }) => {
-
+const TipButton = ({ tipAmount, onClick }) => {
   return (
     <input
       type="button"
       className="tip-button"
       value={`${tipAmount}%`}
       name={`tip-${tipAmount}`}
+      onClick={onClick}
     />
   );
 };

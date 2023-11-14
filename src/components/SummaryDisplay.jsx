@@ -25,7 +25,7 @@ export const CalculatedSummary = ({ bill, tip, customTip, numOfPeople }) => {
     if (customTip) {
       tipAmount = customTip / 100;
     } else {
-      tipAmount = tip;
+      tipAmount = tip / 100;
     }
 
     // Calculate tip and total here 2d.p.

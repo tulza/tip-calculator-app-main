@@ -8,6 +8,7 @@ const Form = () => {
   const [tip, setTip] = useState(0);
   const [customTip, setCustomTip] = useState(0);
   const [numOfPeople, setPeople] = useState(0);
+  const tipRange = [5, 10, 15, 25, 50];
 
   return (
     <form id="tip-box-container">
@@ -18,15 +19,28 @@ const Form = () => {
           onChange={(e) => {
             setBill(e.target.value);
           }}
+          errFunc={(e) => {
+            if (e.target.value <= 0) {
+              return "can't be zero or less";
+            }
+          }}
         />
         <div>
           <p className="mb-2">Select Tip %</p>
           <div id="tip-sel-grid">
-            <TipButton tipAmount={5} />
-            <TipButton tipAmount={10} />
-            <TipButton tipAmount={15} />
-            <TipButton tipAmount={25} />
-            <TipButton tipAmount={50} />
+
+            {tipRange.map((value) => {
+              return (
+                <TipButton
+                  key={value}
+                  tipAmount={value}
+                  onClick={() => {
+                    setTip(value);
+                  }}
+                />
+              );
+            })}
+
             <input
               type="Input"
               className="input-box"
@@ -46,7 +60,7 @@ const Form = () => {
           }}
         />
       </div>
-      <div id="summary">
+      <div id="summary" className="w-full">
         <CalculatedSummary
           bill={bill}
           tip={tip}
