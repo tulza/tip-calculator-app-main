@@ -1,6 +1,7 @@
 import React from "react";
 
 const TipButton = ({ tipAmount }) => {
+
   return (
     <input
       type="button"

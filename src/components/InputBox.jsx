@@ -1,6 +1,6 @@
 import React from "react";
 
-const InputBox = ({ label, imageFile, formName }) => {
+const InputBox = ({ label, imageFile, formName, onChange }) => {
   return (
     <>
       <div>
@@ -9,7 +9,12 @@ const InputBox = ({ label, imageFile, formName }) => {
         </div>
         <div className="flex">
           <img className="input-logo" src={imageFile} />
-          <input type="Input" className="input-box" name={formName} />
+          <input
+            type="Input"
+            className="input-box"
+            name={formName}
+            onChange={onChange}
+          />
         </div>
       </div>
     </>
