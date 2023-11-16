@@ -2,11 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-black;
+:root {
+  --input-button: hsl(183, 100%, 15%);
+  --button-selected: hsl(172, 67%, 75%);
+
+  --input-field: hsl(189, 41%, 92%);
+  --field-select: hsl(172, 67%, 75%);
+
+  --summary-box: hsl(183, 100%, 15%);
 }
 
-/* ignore */
+body {
+  @apply bg-[hsl(185,_41%,_84%)];
+}
+
+#root {
+  background-color: hsl(185, 41%, 84%);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#calculator-app {
+  @apply flex gap-10 bg-white h-[500px] w-[1000px] p-10;
+  border-radius: 24px;
+  font-family: "Space Mono", monospace;
+  font-weight: bold;
+}
+
+#inputs-container {
+  background: white;
+}
+
+#summary-container {
+  border-radius: 16px;
+  background: var(--summary-box);
+  padding: 32px;
+}
+
+#calculator-app input {
+  width: 100%;
+  font-size: 24px;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.input-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  background: var(--input-button);
+  color: white;
+  transition: color, background 5ms;
+}
+
+.input-button-selected {
+  background: var(--button-selected);
+}
+
+.input-field {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  text-align: right;
+
+  background: var(--input-field);
+  outline-color: var(--field-select);
+  transition: color, background 0.15s;
+}
+.input-logo {
+  height: 20px;
+  position: absolute;
+  translate: 15px 15px;
+}
+
+#reset-button {
+  cursor: pointer;
+  background-color: hsl(172, 67%, 45%);
+  transition: 0.2s;
+}
+
+#reset-button:hover {
+  background-color: hsl(172, 67%, 75%);
+}
+
+/* ignore this*/
 .attribution {
   /* bottom center */
   position: fixed;

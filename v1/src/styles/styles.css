@@ -65,10 +65,10 @@
   padding: 8px;
   font-size: 24px;
   border-radius: 8px;
-  background: hsl(183, 100%, 15%);
   color: white;
   transition: color, background 0.2s;
   cursor: pointer;
+  background: hsl(183, 100%, 15%);
 }
 
 .tip-button:hover {
