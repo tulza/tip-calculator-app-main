@@ -1,18 +1,11 @@
-import Form from "./components/Form";
+import { useState } from "react";
+import "./style/styles.css";
 
 function App() {
   return (
     <>
-      <div>
-        <Form />
-        {/* default frontend mentor code */}
-      </div>
-      <div className="attribution">
-        Challenge by{" "}
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
-          Frontend Mentor
-        </a>
-        . Coded by <a href="#">Tulza</a>.
+      <div className="flex justify-center align-middle">
+        <h1> thisa template</h1>
       </div>
     </>
   );
