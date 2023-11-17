@@ -70,6 +70,7 @@ body {
 
 .input-button-selected {
   background: var(--button-selected);
+  color: hsl(183, 100%, 15%);
 }
 
 .input-field {
@@ -80,7 +81,8 @@ body {
 
   background: var(--input-field);
   outline-color: var(--field-select);
-  transition: 0.15s;
+  color: hsl(183, 100%, 15%);
+  transition: 0.1s;
 }
 
 .input-field-error {
