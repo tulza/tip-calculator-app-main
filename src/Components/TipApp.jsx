@@ -3,9 +3,10 @@ import TipInputButton from "./TipInputButton";
 import InputField from "./InputField";
 import CalculatedSummary from "./SummaryDisplay";
 import InputLabel from "./InputLabel";
+import iconDollar from "../../images/icon-dollar.svg";
+import iconPerson from "../../images/icon-person.svg";
 
 const error1 = (people) => {
-  console.log(people);
   if (people === "") {
     return "";
   }
@@ -19,7 +20,6 @@ const error1 = (people) => {
 };
 
 const error2 = (people) => {
-  console.log(people);
   if (people === "" || people === "0") {
     return "";
   }
@@ -41,7 +41,6 @@ const TipApp = () => {
 
   const peopleError = error1(numPeople);
   const billError = error2(bill);
-  console.log(peopleError);
   return (
     <div id="calculator-app">
       {/* Input */}
@@ -51,7 +50,7 @@ const TipApp = () => {
           <InputLabel label="bill" error={billError} />
           <InputField
             value={bill}
-            imageUrl="./images/icon-dollar.svg"
+            imageUrl={iconDollar}
             onChange={(e) => {
               setBill(e.target.value);
             }}
@@ -89,7 +88,7 @@ const TipApp = () => {
           <InputLabel label="Number of People" error={peopleError} />
           <InputField
             value={numPeople}
-            imageUrl="./images/icon-person.svg"
+            imageUrl={iconPerson}
             onChange={(e) => {
               setPeople(e.target.value);
             }}
