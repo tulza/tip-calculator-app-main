@@ -27,12 +27,15 @@ body {
 
 #calculator-app {
   @apply flex gap-10 bg-white h-[500px] w-[1000px] p-10;
+  display: flex;
+  flex-direction: row;
   border-radius: 24px;
   font-family: "Space Mono", monospace;
   font-weight: bold;
 }
 
 #inputs-container {
+  @apply w-[50%] h-full;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -40,9 +43,11 @@ body {
 }
 
 #summary-container {
+  @apply w-[50%] h-full;
   border-radius: 16px;
   background: var(--summary-box);
   padding: 32px;
+  overflow: hidden;
 }
 
 #calculator-app input {
@@ -110,6 +115,30 @@ body {
 
 .input-label {
   color: hsl(186, 14%, 43%);
+}
+
+@media screen and (max-width: 1000px) {
+  #tip-grid {
+    @apply grid-cols-2;
+  }
+
+  #calculator-app {
+    @apply flex gap-10 bg-white h-[1000px] w-[500px] p-10;
+    flex-direction: column;
+  }
+  #inputs-container {
+    @apply h-[50%] w-full;
+  }
+
+  #summary-container {
+    @apply h-[50%] w-full;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #calculator-app {
+    @apply flex gap-10 bg-white h-[800px] w-[370px] p-10;
+  }
 }
 
 /* ignore this*/

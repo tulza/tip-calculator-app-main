@@ -44,7 +44,7 @@ const TipApp = () => {
   return (
     <div id="calculator-app">
       {/* Input */}
-      <div id="inputs-container" className="w-[50%] h-full">
+      <div id="inputs-container">
         {/* bill */}
         <div>
           <InputLabel label="bill" error={billError} />
@@ -60,7 +60,7 @@ const TipApp = () => {
         {/* tip selection grid */}
         <div>
           <InputLabel label="Select Tip %" />
-          <div className="grid grid-cols-3 gap-4">
+          <div id="tip-grid" className="grid grid-cols-3 gap-4">
             {setTips.map((value) => {
               return (
                 <TipInputButton
@@ -97,10 +97,7 @@ const TipApp = () => {
         </div>
       </div>
       {/* Summary */}
-      <div
-        id="summary-container"
-        className="flex flex-col justify-between w-[50%] h-full"
-      >
+      <div id="summary-container" className="flex flex-col justify-between">
         <div>
           <CalculatedSummary
             bill={billError ? null : bill}
