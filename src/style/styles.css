@@ -75,7 +75,11 @@ body {
 
   background: var(--input-field);
   outline-color: var(--field-select);
-  transition: color, background 0.15s;
+  transition: 0.15s;
+}
+
+.input-field-error {
+  outline-color: red;
 }
 .input-logo {
   height: 20px;

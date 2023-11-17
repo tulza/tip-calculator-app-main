@@ -15,7 +15,6 @@ const SummaryDisplay = ({ label, perLabel, value }) => {
 };
 
 export const CalculatedSummary = ({ bill, tip, customTip, numOfPeople }) => {
-  console.log(bill, tip, customTip, numOfPeople);
   let tipAmount = 0;
   let tipPerPerson = "0.00";
   let total = "0.00";
@@ -32,7 +31,6 @@ export const CalculatedSummary = ({ bill, tip, customTip, numOfPeople }) => {
     tipPerPerson = Math.round((100 * (bill * tipAmount)) / numOfPeople) / 100;
     total = Math.round((100 * (bill * (1 + tipAmount))) / numOfPeople) / 100;
   }
-  console.log(tipPerPerson, total);
   return (
     <>
       <SummaryDisplay
