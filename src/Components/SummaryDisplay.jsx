@@ -4,10 +4,10 @@ const SummaryDisplay = ({ label, perLabel, value }) => {
   return (
     <div className="flex justify-between items-center h-20">
       <div>
-        <p className="text-summary-label">{label}</p>
-        <p className="text-summary-perLabel">/ {perLabel}</p>
+        <p className="summary-label">{label}</p>
+        <p className="summary-perLabel">/ {perLabel}</p>
       </div>
-      <span className="text-summary-total text-[50px]">
+      <span className="summary-total text-[50px]">
         $<span>{value}</span>
       </span>
     </div>
