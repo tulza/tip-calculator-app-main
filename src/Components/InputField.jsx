@@ -7,7 +7,7 @@ const InputField = ({ value, placeholder, imageUrl, onChange, error }) => {
       <img className="input-logo" src={imageUrl} />
       <input
         value={value}
-        type="Input"
+        type="number"
         className={clsx("input-field", error ? "input-field-error" : "")}
         placeholder={placeholder}
         onChange={onChange}

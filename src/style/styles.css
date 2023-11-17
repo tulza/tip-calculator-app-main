@@ -84,6 +84,12 @@ body {
   color: hsl(183, 100%, 15%);
   transition: 0.1s;
 }
+/* hide arrow */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 .input-field-error {
   outline-color: red;

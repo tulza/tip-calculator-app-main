@@ -25,8 +25,6 @@ const error2 = (people) => {
   }
   if (parseInt(people) < 0) {
     return "Can't be less than 0";
-  } else if (!parseFloat(people)) {
-    return "Must a number";
   } else {
     return "";
   }
@@ -51,6 +49,7 @@ const TipApp = () => {
           <InputField
             value={bill}
             imageUrl={iconDollar}
+            placeholder="0"
             onChange={(e) => {
               setBill(e.target.value);
             }}
@@ -89,6 +88,7 @@ const TipApp = () => {
           <InputField
             value={numPeople}
             imageUrl={iconPerson}
+            placeholder="0"
             onChange={(e) => {
               setPeople(e.target.value);
             }}
