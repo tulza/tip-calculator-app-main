@@ -82,7 +82,7 @@ body {
   background: var(--input-field);
   outline-color: var(--field-select);
   color: hsl(183, 100%, 15%);
-  transition: 0.1s;
+  transition: 0.2s;
 }
 /* hide arrow */
 input::-webkit-outer-spin-button,
@@ -98,6 +98,11 @@ input::-webkit-inner-spin-button {
   height: 20px;
   position: absolute;
   translate: 15px 15px;
+}
+#reset-button-disabled {
+  color: hsl(183, 100%, 18%);
+  background-color: hsl(183, 100%, 20%);
+  transition: 0.2s;
 }
 
 #reset-button {

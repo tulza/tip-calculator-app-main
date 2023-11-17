@@ -28,7 +28,7 @@ export const CalculatedSummary = ({ bill, tip, customTip, numOfPeople }) => {
     }
 
     // Calculate tip and total here 2d.p.
-    tipPerPerson = Math.round((100 * (bill * tipAmount)) / numOfPeople) / 100;
+    tipPerPerson = Math.floor((100 * (bill * tipAmount)) / numOfPeople) / 100;
     total = Math.round((100 * (bill * (1 + tipAmount))) / numOfPeople) / 100;
   }
   return (
