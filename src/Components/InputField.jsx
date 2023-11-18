@@ -1,32 +1,41 @@
 import React from "react";
 import clsx from "clsx";
 
-const InputField = ({ value, placeholder, imageUrl, onChange, error }) => {
-  if (imageUrl) {
-    return (
-      <div className="flex">
-        <img className="input-logo" src={imageUrl} alt="input field image" />
-        <input
-          value={value}
-          type="number"
-          className={clsx("input-field", error ? "input-field-error" : "")}
-          placeholder={placeholder}
-          onChange={onChange}
-        />
-      </div>
-    );
-  }
+const InputLabel = ({ label, error }) => {
   return (
-    <div className="flex">
-      <input
-        value={value}
-        type="number"
-        className={clsx("input-field", error ? "input-field-error" : "")}
-        placeholder={placeholder}
-        onChange={onChange}
-      />
+    <div className="input-label flex justify-between py-2">
+      <span>{label}</span>
+      <span className="text-[red]">{error}</span>
     </div>
   );
 };
 
-export default InputField;
+const InputField = ({
+  value,
+  placeholder,
+  imageUrl,
+  onChange,
+  error,
+  label,
+}) => {
+  console.log(error);
+  return (
+    <>
+      {label && <InputLabel label={label} error={error} />}
+      <div className="flex">
+        {imageUrl && (
+          <img className="input-logo" src={imageUrl} alt="input field image" />
+        )}
+        <input
+          value={value}
+          type="number"
+          className={clsx("input-field", error && "input-field-error")}
+          placeholder={placeholder}
+          onChange={onChange}
+        />
+      </div>
+    </>
+  );
+};
+
+export { InputField, InputLabel };

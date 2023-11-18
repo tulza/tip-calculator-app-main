@@ -1,6 +1,7 @@
+import { clsx } from "clsx";
 import React from "react";
 
-const SummaryDisplay = ({ label, perLabel, value }) => {
+const SumamryRow = ({ label, perLabel, value }) => {
   return (
     <div className="flex justify-between items-center h-20">
       <div>
@@ -14,7 +15,13 @@ const SummaryDisplay = ({ label, perLabel, value }) => {
   );
 };
 
-export const CalculatedSummary = ({ bill, tip, customTip, numOfPeople }) => {
+export const SummaryDisplay = ({
+  bill,
+  tip,
+  customTip,
+  numOfPeople,
+  handleReset,
+}) => {
   let tipAmount = 0;
   let tipPerPerson = "0.00";
   let total = "0.00";
@@ -32,15 +39,23 @@ export const CalculatedSummary = ({ bill, tip, customTip, numOfPeople }) => {
     total = Math.round((100 * (bill * (1 + tipAmount))) / numOfPeople) / 100;
   }
   return (
-    <>
-      <SummaryDisplay
-        label="Tip Amount"
-        perLabel="person"
-        value={tipPerPerson}
+    <div id="summary-container" className="flex flex-col justify-between">
+      <div>
+        <SumamryRow label="Tip Amount" perLabel="person" value={tipPerPerson} />
+        <SumamryRow label="Total" perLabel="person" value={total} />
+      </div>
+      <input
+        type="button"
+        id={clsx(
+          bill || tip || customTip || numOfPeople
+            ? "reset-button"
+            : "reset-button-disabled"
+        )}
+        value="RESET"
+        onClick={handleReset}
       />
-      <SummaryDisplay label="Total" perLabel="person" value={total} />
-    </>
+    </div>
   );
 };
 
-export default CalculatedSummary;
+export default SummaryDisplay;
